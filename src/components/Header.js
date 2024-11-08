@@ -3,12 +3,18 @@ import Logo from './Logo'
 
 function Header() {
   return (
-    <header>
-        <div className='container mx-auto'>
+    <header className='h-16 shadow-md'>
+        <div className='container mx-auto flex  items-center px-4 h-full justify-between'>
             <div className=''>
-                <Logo w={100} h={60}/>
+                <Logo w={90} h={50}/>
             </div>
+            <div>
+              <input type='text' placeholder='search item here...'/>
+            </div>
+            <div>icons user </div>
         </div>
+      
+
     </header>
   )
 }
