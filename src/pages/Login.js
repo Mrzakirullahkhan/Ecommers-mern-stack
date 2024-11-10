@@ -2,17 +2,18 @@ import React, { useState } from 'react'
 import loginIcon from "../assest/signin.gif"
 import { IoEye } from "react-icons/io5";
 import { FaEyeSlash } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 function Login() {
-    const [showPassword,setshowPassword] = useState(true)
+    const [showPassword,setshowPassword] = useState(false)
   return (
     <section id='login'>
         <div className='mx-auto conatiner p-4'>
-            <div className='bg-white p-3 w-full max-w-md mx-auto'>
+            <div className='bg-white p-5 w-full max-w-sm mx-auto'>
                 <div className='w-20 h-20 mx-auto'>
                     <img src={loginIcon} alt='login icons'/>
                 </div>
-                <form>
+                <form className='pt-6'>
                     <div className='grid'>
                         <lebal>Email: </lebal>
                         <div className='bg-slate-200 p-2'>
@@ -37,9 +38,11 @@ function Login() {
                             </span>
                         </div>
                         </div>
+                        <Link to={"/forgot-password"} className='hover:text-red-600 w-fit block ml-auto hover:underline'>Forgot password</Link>
                     </div>
-                    <button>Login</button>
+                    <button className='bg-red-600 hover:bg-red-700 px-6 py-2 mt-6 text-white w-full max-w-[160px] rounded-full hover:scale-110 transition-all block mx-auto'>Login</button>
                 </form>
+                <p className=' pt-4'>Don't have an account <Link className='hover:text-red-600 hover:underline' to={"/sign-up"} >sign up</Link> </p>
             </div>
         </div>
     </section>
