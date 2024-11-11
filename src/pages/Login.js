@@ -6,6 +6,21 @@ import { Link } from 'react-router-dom';
 
 function Login() {
     const [showPassword,setshowPassword] = useState(false)
+    const [data,setData] =useState({
+        email:"",
+        password :""
+    })
+
+    const handlerChange = (e)=>{
+            const {name, value} = e.target
+            setData((preve)=>{
+                return{
+                    ...preve,
+                    [name] : value
+                }
+            })
+    }
+        console.log("data login ", data)
   return (
     <section id='login'>
         <div className='mx-auto conatiner p-4'>
@@ -17,14 +32,24 @@ function Login() {
                     <div className='grid'>
                         <lebal>Email: </lebal>
                         <div className='bg-slate-200 p-2'>
-                        <input type='email' placeholder='Enter email' className='w-full h-full outline-none bg-transparent'/>
+                        <input type='email'
+                        onChange={handlerChange}
+                        value={data.email}
+                        name='email'
+                         placeholder='Enter email'
+                          className='w-full h-full outline-none bg-transparent'/>
 
                         </div>
                     </div>
                     <div >
                         <lebal>Password: </lebal>
                         <div className='bg-slate-200 p-2 flex'>
-                        <input type={showPassword? "text" : "password"} placeholder='Enter password' className='w-full h-full outline-none bg-transparent'/>
+                        <input type={showPassword? "text" : "password"} 
+                        placeholder='Enter password'
+                        onChange={handlerChange}
+                        name='password'
+                        value={data.password}
+                         className='w-full h-full outline-none bg-transparent'/>
                         <div className='cursor-pointer text-xl ' onClick={()=>setshowPassword((prevent)=>!prevent)}>
                             <span>
                                 {
