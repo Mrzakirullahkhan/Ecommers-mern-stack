@@ -11,6 +11,9 @@ function Login() {
         password :""
     })
 
+    const handlerSubmit = (e) =>{
+        e.preventDefault()
+    }
     const handlerChange = (e)=>{
             const {name, value} = e.target
             setData((preve)=>{
@@ -20,6 +23,7 @@ function Login() {
                 }
             })
     }
+  
         console.log("data login ", data)
   return (
     <section id='login'>
@@ -28,7 +32,7 @@ function Login() {
                 <div className='w-20 h-20 mx-auto'>
                     <img src={loginIcon} alt='login icons'/>
                 </div>
-                <form className='pt-6'>
+                <form className='pt-6' onSubmit={handlerSubmit}>
                     <div className='grid'>
                         <lebal>Email: </lebal>
                         <div className='bg-slate-200 p-2'>
