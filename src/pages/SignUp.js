@@ -3,6 +3,8 @@ import loginIcon from "../assest/signin.gif"
 import { IoEye } from "react-icons/io5";
 import { FaEyeSlash } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import imagetobase64 from '../helper/imagetobase64';
+
 
 
 function SignUp() {
@@ -18,6 +20,12 @@ function SignUp() {
 
   const handlerSubmit = (e) =>{
       e.preventDefault()
+  }
+  // image uplaoding 
+  const handlerProfilePic = async (e)=>{
+    const file = e.target.files[0]
+    const myImg = await imagetobase64(file)
+    console.log("image", myImg)
   }
   const handlerChange = (e)=>{
           const {name, value} = e.target
@@ -43,7 +51,7 @@ function SignUp() {
                 <div className='text-xs bg-opacity-90  cursor-pointer bg-slate-200 pb-5 pt-2 text-center absolute bottom-0 w-full'>
                       upload image
                 </div>
-                <input type='file' className='hidden'/>
+                <input type='file' className='hidden' onChange={handlerProfilePic}/>
                 </label>
               </form>
             </div>
