@@ -32,7 +32,7 @@ function Login() {
                 <div className='w-20 h-20 mx-auto'>
                     <img src={loginIcon} alt='login icons'/>
                 </div>
-                <form className='pt-6' onSubmit={handlerSubmit}>
+                <form className='pt-6 flex flex-col gap-3' onSubmit={handlerSubmit}>
                     <div className='grid'>
                         <lebal>Email: </lebal>
                         <div className='bg-slate-200 p-2'>

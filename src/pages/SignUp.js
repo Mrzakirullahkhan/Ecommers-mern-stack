@@ -10,7 +10,10 @@ function SignUp() {
   const [showConformPassword,setshowConformPassword] = useState(false)
   const [data,setData] =useState({
       email:"",
-      password :""
+      password :"",
+      name:"",
+      Conformpassword:"",
+      profilePicture:""
   })
 
   const handlerSubmit = (e) =>{
@@ -31,10 +34,20 @@ function SignUp() {
     <section id='login'>
     <div className='mx-auto conatiner p-4'>
         <div className='bg-white p-5 w-full max-w-sm mx-auto'>
-            <div className='w-20 h-20 mx-auto'>
+            <div className='w-20 h-20 mx-auto relative overflow-hidden rounded-full'>
+                <div>
                 <img src={loginIcon} alt='login icons'/>
+                </div>
+              <form className=''>
+                <label>
+                <div className='text-xs bg-opacity-90  cursor-pointer bg-slate-200 pb-5 pt-2 text-center absolute bottom-0 w-full'>
+                      upload image
+                </div>
+                <input type='file' className='hidden'/>
+                </label>
+              </form>
             </div>
-            <form className='pt-6' onSubmit={handlerSubmit}>
+            <form className='pt-6 flex flex-col gap-3' onSubmit={handlerSubmit}>
             <div className='grid'>
                     <lebal>Name: </lebal>
                     <div className='bg-slate-200 p-2'>
