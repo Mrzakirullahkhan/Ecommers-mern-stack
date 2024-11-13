@@ -106,9 +106,9 @@ function SignUp() {
                     </div>
 
                 </div>
-                <button className='bg-red-600 hover:bg-red-700 px-6 py-2 mt-6 text-white w-full max-w-[160px] rounded-full hover:scale-110 transition-all block mx-auto'>Login</button>
+                <button className='bg-red-600 hover:bg-red-700 px-6 py-2 mt-6 text-white w-full max-w-[160px] rounded-full hover:scale-110 transition-all block mx-auto'>Sign Up</button>
             </form>
-            <p className=' pt-4'>Don't have an account <Link className='hover:text-red-600 hover:underline' to={"/sign-up"} >sign up</Link> </p>
+            <p className=' pt-4'>Don't have an account <Link className='hover:text-red-600 hover:underline' to={"/login"} >Login </Link> </p>
         </div>
     </div>
 </section>
