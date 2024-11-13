@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 
 function SignUp() {
   const [showPassword,setshowPassword] = useState(false)
+  const [showConformPassword,setshowConformPassword] = useState(false)
   const [data,setData] =useState({
       email:"",
       password :""
@@ -85,16 +86,16 @@ function SignUp() {
                 <div >
                     <lebal>Conform Password: </lebal>
                     <div className='bg-slate-200 p-2 flex'>
-                    <input type={showPassword? "text" : "password"} 
+                    <input type={showConformPassword? "text" : "password"} 
                     placeholder='Conform  password'
                     onChange={handlerChange}
-                    name='password'
-                    value={data.password}
+                    name='Conformpassword'
+                    value={data.Conformpassword}
                      className='w-full h-full outline-none bg-transparent'/>
-                    <div className='cursor-pointer text-xl ' onClick={()=>setshowPassword((prevent)=>!prevent)}>
+                    <div className='cursor-pointer text-xl ' onClick={()=>setshowConformPassword((prevent)=>!prevent)}>
                         <span>
                             {
-                                showPassword?(
+                                showConformPassword?(
                                     <IoEye/>
                                 ):
                                 (
